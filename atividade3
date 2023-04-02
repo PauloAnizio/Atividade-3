@@ -1,0 +1,55 @@
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
+public class ProjetoOrdenacao {
+    public static void main(String[] args) {
+        LinkedList<Integer> lista = new LinkedList<>();
+        Stack<Integer> pilha = new Stack<>();
+        Queue<Integer> fila = new LinkedList<>();
+
+        // Passo 1
+        lista.add(1);
+        lista.add(2);
+        lista.add(3);
+        lista.add(4);
+        lista.add(5);
+
+        // Passo 2
+        while (!lista.isEmpty()) {
+            int elemento = lista.removeFirst();
+            pilha.push(elemento);
+        }
+
+        // Passo 3
+        while (!pilha.isEmpty()) {
+            int elemento = pilha.pop();
+            fila.add(elemento);
+        }
+
+        // Passo 4
+        lista.add(6);
+        lista.add(7);
+        lista.add(8);
+        lista.add(9);
+        lista.add(10);
+
+        // Passo 5
+        while (!lista.isEmpty()) {
+            int elemento = lista.removeFirst();
+            pilha.push(elemento);
+        }
+
+        while (!pilha.isEmpty()) {
+            int elemento = pilha.pop();
+            fila.add(elemento);
+        }
+
+        // Passo 6
+        System.out.println("Números na fila:");
+        while (!fila.isEmpty()) {
+            int elemento = fila.remove();
+            System.out.print(elemento + " ");
+        }
+    }
+}
